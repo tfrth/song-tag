@@ -89,6 +89,7 @@ When you're finished, a GET to `/artists/:id` for Nelly should return something 
 ```json
 [
   {
+    "_id": "...",
     "name": "Nelly",
     "bio": "Cornell Iral Haynes, Jr., better known by his stage name, Nelly, is an American rapper, singer, songwriter, entrepreneur, investor and occasional actor from St. Louis, Missouri",
     "songs": [
