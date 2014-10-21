@@ -8,7 +8,9 @@ You'll create a simple set of schema revolving around Artists, their Songs, and 
 
 ##Step 1: Create Schema
 
-Here are the models we'll create in Mongoose:
+In server.js file, make sure you include Express and Mongoose as dependencies. Also, in server.js, initiliaze the connection to Mongo.
+
+Here are the Mongoose models we'll create in our server.js:
 
 ####Artist
  * name (string)
@@ -44,4 +46,32 @@ This should necessitate adding fields to our models to represent these relations
 ####Tag
 * songs
 
-##Step 2: Complete Angular
+##Step 2: Create API
+Back in server.js, let's create the routes for our little API.
+
+####GET /artists
+Returns a list of artists with a `songs` attribute
+
+```javascript
+[
+  {
+    name: 'Nelly',
+    songs: [
+      {
+        name: 'Some song',
+        id: 'abc123'
+        //etc.
+      }
+    ],
+    //etc
+]
+```
+
+####GET /artists/:id
+Returns the specified artist
+
+####GET /song/:id
+Returns song with associated tags
+
+####POST /song/:id/tags
+Creates a tag (if it doesn't already exist) and associate it with the given song.
