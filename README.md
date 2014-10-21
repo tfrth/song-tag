@@ -27,7 +27,7 @@ Here are the Mongoose models we'll create in our server.js:
 ####Tag
  * name (string, unique)
 
-Create each of the models listed above. Put them each in their own file in a `/lib/models` directory. Make sure you use `module.exports` so that we can `require` these models in our API.
+Create each of the models listed above. Put them each in their own file in a `/models` directory. Make sure you use `module.exports` so that we can `require` these models in our API.
 
 Now, let's connect these models. 
 
@@ -110,6 +110,6 @@ When you're finished, a GET to `/artists/:id` for Nelly should return something 
 Returns song with associated tags
 
 ####POST /song/:id/tags
-Creates a tag (if it doesn't already exist) and associate it with the given song.
+Creates a tag (if it doesn't already exist) and associate it with the given song. To do this, you might want to utilize the `findOneAndUpdate` with the `upsert` option set to `true`.
 
 Now test your app by POSTing some tags to "Ride wit me."
