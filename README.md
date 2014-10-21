@@ -46,35 +46,69 @@ This should necessitate adding fields to our models to represent these relations
 ####Tag
 * songs
 
-##Step 2: Create seed data
-Seed your collection with some song/artist data.
-
-##Step 3: Create API
+##Step 2: Create API
 Back in server.js, let's create the routes for our little API.
+
+####POST /artists
+Save a new artist
 
 ####GET /artists
 Returns a list of artists with a `songs` attribute
 
-```javascript
-[
-  {
-    name: 'Nelly',
-    songs: [
-      {
-        name: 'Some song',
-        id: 'abc123'
-        //etc.
-      }
-    ],
-    //etc
-]
+Create an artist named `Nelly` with the following attributes:
+
+```json
+{
+  "name": "Nelly",
+  "bio": "Cornell Iral Haynes, Jr., better known by his stage name, Nelly, is an American rapper, singer, songwriter, entrepreneur, investor and occasional actor from St. Louis, Missouri",
+  "genres": ["hip hop","pop","R&B"]
+}
 ```
 
 ####GET /artists/:id
 Returns the specified artist
+
+####POST /artists/:id/songs
+Adds a new song for the given artist
+
+Create a song for Nelly with the following attributes:
+
+```json
+{
+  name: 'Ride wit me', 
+  album: 'Country Grammar', 
+  genre: 'pop', 
+  releasedOn: '4-1-2001', 
+  isExplicit: false
+}
+```
+
+
+When you're finished, a GET to `/artists/:id` for Nelly should return something like this:
+
+```json
+[
+  {
+    "name": "Nelly",
+    "bio": "Cornell Iral Haynes, Jr., better known by his stage name, Nelly, is an American rapper, singer, songwriter, entrepreneur, investor and occasional actor from St. Louis, Missouri",
+    "songs": [
+      {
+        name: 'Ride wit me', 
+        album: 'Country Grammar', 
+        genre: 'pop', 
+        releasedOn: '4-1-2001', 
+        isExplicit: false
+      }
+    ],
+    "genres": ["hip hop","pop","R&B"]
+  }
+]
+```
 
 ####GET /song/:id
 Returns song with associated tags
 
 ####POST /song/:id/tags
 Creates a tag (if it doesn't already exist) and associate it with the given song.
+
+Now test your app by POSTing some tags to "Ride wit me."
