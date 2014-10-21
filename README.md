@@ -46,7 +46,10 @@ This should necessitate adding fields to our models to represent these relations
 ####Tag
 * songs
 
-##Step 2: Create API
+##Step 2: Create seed data
+Seed your collection with some song/artist data.
+
+##Step 3: Create API
 Back in server.js, let's create the routes for our little API.
 
 ####GET /artists
