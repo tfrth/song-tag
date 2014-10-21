@@ -1,7 +1,7 @@
 song-tag
 ========
 
-A mini project to practice validation, relationships in Mongo, populate.
+A mini project to practice relationships in Mongo.
 
 ##Objectives
 You'll create a simple set of schema revolving around Artists, their Songs, and a set of Tags that are associated with songs.
