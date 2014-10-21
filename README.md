@@ -75,11 +75,11 @@ Create a song for Nelly with the following attributes:
 
 ```json
 {
-  name: 'Ride wit me', 
-  album: 'Country Grammar', 
-  genre: 'pop', 
-  releasedOn: '4-1-2001', 
-  isExplicit: false
+  "name": "Ride wit me", 
+  "album": "Country Grammar", 
+  "genre": "pop", 
+  "releasedOn": "4-1-2001", 
+  "isExplicit": false
 }
 ```
 
@@ -93,11 +93,11 @@ When you're finished, a GET to `/artists/:id` for Nelly should return something 
     "bio": "Cornell Iral Haynes, Jr., better known by his stage name, Nelly, is an American rapper, singer, songwriter, entrepreneur, investor and occasional actor from St. Louis, Missouri",
     "songs": [
       {
-        name: 'Ride wit me', 
-        album: 'Country Grammar', 
-        genre: 'pop', 
-        releasedOn: '4-1-2001', 
-        isExplicit: false
+        "name": "Ride wit me", 
+        "album": "Country Grammar", 
+        "genre": "pop", 
+        "releasedOn": "4-1-2001", 
+        "isExplicit": false
       }
     ],
     "genres": ["hip hop","pop","R&B"]
