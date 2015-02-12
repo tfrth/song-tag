@@ -29,7 +29,7 @@ Here are the Mongoose models we'll create in our server.js:
 
 Create each of the models listed above. Put them each in their own file in a `/models` directory. Make sure you use `module.exports` so that we can `require` these models in our API.
 
-Now, let's connect these models. 
+Now, let's connect these models. Both will use references, not embedded relationships.
 
 * Use a one-to-many relationship for Artist -> Song
 * Use a many-to-many relationship for Song -> Tag
@@ -107,9 +107,9 @@ When you're finished, a GET to `/artists/:id` for Nelly should return something 
 ```
 
 ####GET /song/:id
-Returns song with associated tags
+Returns song with associated tags (remember populate)
 
 ####POST /song/:id/tags
-Creates a tag (if it doesn't already exist) and associate it with the given song. To do this, you might want to utilize the `findOneAndUpdate` with the `upsert` option set to `true`.
+Creates a tag (if it doesn't already exist) and associate it with the given song. Hint: To do this, you might want to utilize the `findOneAndUpdate` with the `upsert` option set to `true`.
 
 Now test your app by POSTing some tags to "Ride wit me."
